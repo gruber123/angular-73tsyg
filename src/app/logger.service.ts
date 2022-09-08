@@ -7,6 +7,8 @@ export class LoggerService {
   prevMsgCount = 1;
 
   log(msg: string)  {
+    debugger;
+    console.log({msg, prevMsg: this.prevMsg, logs: this.logs, prevMsgCount: this.prevMsgCount});
     if (msg === this.prevMsg) {
       // Repeat message; update last log entry with count.
       this.logs[this.logs.length - 1] = msg + ` (${this.prevMsgCount += 1}x)`;
@@ -16,6 +18,7 @@ export class LoggerService {
       this.prevMsgCount = 1;
       this.logs.push(msg);
     }
+    console.log({msg, prevMsg: this.prevMsg, logs: this.logs, prevMsgCount: this.prevMsgCount});
   }
 
   clear() { this.logs = []; }
