@@ -26,7 +26,6 @@ export class SpyParentComponent {
     this.logger.tick();
   }
   reset() {
-    debugger;
     console.log(this.heroes);
     this.logger.log('reset');
     this.heroes = [];
